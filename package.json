@@ -1,0 +1,31 @@
+{
+  "name": "else-proxy",
+  "version": "1.0.0",
+  "description": "proxy for elasticsearch",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PavelNovotny/else-proxy.git"
+  },
+  "keywords": [
+    "elasticsearch",
+    "proxy"
+  ],
+  "author": "Pavel Novotny",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PavelNovotny/else-proxy/issues"
+  },
+  "homepage": "https://github.com/PavelNovotny/else-proxy#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "nconf": "^0.8.4",
+    "path": "^0.12.7",
+    "request": "^2.74.0"
+  }
+}
