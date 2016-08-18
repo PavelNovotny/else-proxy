@@ -19,7 +19,7 @@ nconf.argv()
     .file({ file: 'config-'+nconf.get('env')+'.json' });
 
 var jsonParser = bodyParser.json();
-console.log(jsonParser);
+console.log("Listening on port: " + nconf.get('listen-port'));
 
 //proxy
 var proxied = ['/service_index/_search'];
