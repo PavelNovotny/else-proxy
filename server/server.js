@@ -12,7 +12,7 @@ var nconf = require('nconf');
 var bodyParser = require('body-parser');
 var convert = require('else-markup-conversion');
 var Stream = require('stream');
-
+var fs = require('fs');
 
 nconf.argv()
     .env()
@@ -21,6 +21,7 @@ nconf.argv()
 
 app.use(cors());
 
+var customerTemplate = fs.readFileSync(nconf.get('customer-template'), 'utf8');
 
 var jsonParser = bodyParser.json();
 console.log("Listening on port: " + nconf.get('listen-port'));
@@ -37,7 +38,7 @@ app.use(function(req, res) {
         console.log(str);
         var stream = new Stream();
         stream.pipe = function(dest) {
-            var converted = convert.searchCustomers(str);
+            var converted = convert.searchQuery(str, customerTemplate);
             console.log("Converted: " + converted);
             dest.write(converted);
             return dest;

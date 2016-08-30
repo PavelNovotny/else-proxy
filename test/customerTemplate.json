@@ -1,0 +1,26 @@
+{
+  "query": {
+    "bool": {
+      "must": [
+        {{#searchStrings}}
+        {
+          "query_string": {
+            "query": "*{{searchString}}*",
+            "fields": [
+              "firstName",
+              "lastName",
+              "companyName",
+              "address.street",
+              "address.city",
+              "address.zip",
+              "birthNumber",
+              "ico"
+            ]
+          }
+        },
+        {{/searchStrings}}
+        {}
+      ]
+    }
+  }
+}
